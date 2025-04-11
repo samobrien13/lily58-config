@@ -23,7 +23,7 @@
             bindings = <
 &kp GRAVE  &kp N1       &kp N2          &kp N3              &kp N4            &kp N5                           &kp N6    &kp N7             &kp N8               &kp N9           &kp N0       &kp EQUAL
 &kp TAB    &kp Q        &kp W           &kp F               &kp P             &kp B                            &kp J     &kp L              &kp U                &kp Y            &kp SEMI     &kp MINUS
-&kp ESC    &mt LCTRL A  &mt LEFT_ALT R  &mt LEFT_COMMAND S  &mt LEFT_SHIFT T  &kp G                            &kp M     &mt RIGHT_SHIFT N  &mt RIGHT_COMMAND E  &mt RIGHT_ALT I  &mt RCTRL O  &kp SQT
+&kp ESC    &hml LCTRL A &hml LEFT_ALT R &hml LEFT_COMMAND S &hml LEFT_SHIFT T &kp G                            &kp M     &hmr RIGHT_SHIFT N &hmr RIGHT_COMMAND E &hmr RIGHT_ALT I &mt RCTRL O  &kp SQT
 &kp LSHFT  &kp X        &kp C           &kp D               &kp V             &kp Z     &kp LBKT     &kp RBKT  &kp K     &kp H              &kp COMMA            &kp DOT          &kp FSLH     &kp RSHFT
                                         &tog 1              &kp LCTRL         &kp LALT  &kp SPACE    &kp RET   &kp BSPC  &kp RGUI           &tog 2
             >;
@@ -49,6 +49,26 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
+        };
+    };
+    behaviors {
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <175>;
+            label = "home_row_mod_left";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "tap-preferred";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <175>;
+            label = "home_row_mod_right";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
         };
     };
 };
