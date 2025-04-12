@@ -6,6 +6,16 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include "zmk-helpers/helper.h"
+
+#include "zmk-helpers/key-labels/lily58.h"
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5 LF0 LF1 LF2 LF3 LF4 LF5 LEC
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5 RF0 RF1 RF2 RF3 RF4 RF5 REC
+#define KEYS_T LH3 LH2 LH1 LH0 RH0 RH1 RH2 RH3
+
+#include "includes/settings.dtsi"
+#include "includes/behaviours_homerow_mods.dtsi"
 
 / {
     keymap {
@@ -23,7 +33,7 @@
             bindings = <
 &kp GRAVE  &kp N1       &kp N2          &kp N3              &kp N4            &kp N5                           &kp N6    &kp N7             &kp N8               &kp N9           &kp N0       &kp EQUAL
 &kp TAB    &kp Q        &kp W           &kp F               &kp P             &kp B                            &kp J     &kp L              &kp U                &kp Y            &kp SEMI     &kp MINUS
-&kp ESC    &hml LCTRL A &hml LEFT_ALT R &hml LEFT_COMMAND S &hml LEFT_SHIFT T &kp G                            &kp M     &hmr RIGHT_SHIFT N &hmr RIGHT_COMMAND E &hmr RIGHT_ALT I &mt RCTRL O  &kp SQT
+&kp ESC    &hm_l LCTRL A &hm_l LEFT_ALT R &hm_l LEFT_COMMAND S &hm_shift_l LEFT_SHIFT T &kp G                            &kp M     &hm_shift_r RIGHT_SHIFT N &hm_r RIGHT_COMMAND E &hm_r RIGHT_ALT I &mt RCTRL O  &kp SQT
 &kp LSHFT  &kp X        &kp C           &kp D               &kp V             &kp Z     &kp LBKT     &kp RBKT  &kp K     &kp H              &kp COMMA            &kp DOT          &kp FSLH     &kp RSHFT
                                         &tog 1              &kp LCTRL         &kp LALT  &kp SPACE    &kp RET   &kp BSPC  &kp RGUI           &tog 2
             >;
@@ -49,26 +59,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
-        };
-    };
-    behaviors {
-        hml: home_row_mod_left {
-            compatible = "zmk,behavior-hold-tap";
-            flavor = "tap-preferred";
-            tapping-term-ms = <180>;
-            quick-tap-ms = <175>;
-            label = "home_row_mod_left";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-        };
-        hmr: home_row_mod_right {
-            compatible = "zmk,behavior-hold-tap";
-            flavor = "tap-preferred";
-            tapping-term-ms = <180>;
-            quick-tap-ms = <175>;
-            label = "home_row_mod_right";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
         };
     };
 };
