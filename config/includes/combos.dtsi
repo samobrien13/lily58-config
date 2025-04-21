@@ -1,7 +1,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_capsword = {
+        combo_capsword {
             compatible = "zmk,combo";
             key-positions = <28 31>;
             bindings = <&caps_word>;
