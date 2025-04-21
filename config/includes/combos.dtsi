@@ -1,11 +1,15 @@
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+
 / {
     combos {
         compatible = "zmk,combos";
-        combo_capsword {
-            compatible = "zmk,combo";
-            key-positions = <28 31>;
-            bindings = <&caps_word>;
-            timeout-ms = <50>;
-        };
+
+        COMBO(combo_capsword, &caps_word, 28 31);
     };
 };
