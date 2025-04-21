@@ -1,0 +1,11 @@
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_capsword = {
+            compatible = "zmk,combo";
+            key-positions = <RB4 LB4>;
+            bindings = <&caps_word>;
+            timeout-ms = <50>;
+        };
+    };
+};
