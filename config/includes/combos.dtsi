@@ -10,6 +10,6 @@
     combos {
         compatible = "zmk,combos";
 
-        COMBO(combo_capsword, &caps_word, 28 31);
+        COMBO(caps_word, &caps_word, 28 31);
     };
 };
